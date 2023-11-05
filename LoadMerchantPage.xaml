@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:XF_GoldenStore.ModelServices"
+             x:Class="XF_GoldenStore.LoadMerchantPage">
+
+    <!-- declare the Base64ToImageSource -->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ConverterBase64ImageSource x:Key="Base64ToImageSource" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout >
+        <Label Text="Exhibits" HorizontalOptions="Center" VerticalOptions="Center" FontSize="36" />
+        <StackLayout >
+            <ListView x:Name="listView" 
+                          HasUnevenRows="True" 
+                          IsPullToRefreshEnabled="true" 
+                          RefreshControlColor="Red" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Grid Padding="10,10,10,10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition  Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <StackLayout Orientation="Horizontal" BackgroundColor="#313FA0"  HorizontalOptions="CenterAndExpand">
+                                        <Label Text="{Binding ShopName}" FontSize="18"  HeightRequest="100" WidthRequest="100" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold"  TextColor="White" />
+                                        <Image Source="{Binding Url1, Converter={StaticResource Base64ToImageSource}}"  HeightRequest="100" WidthRequest="100"></Image>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

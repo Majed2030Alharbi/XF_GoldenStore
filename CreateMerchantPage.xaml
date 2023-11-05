@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF_GoldenStore.CreateMerchantPage"
+             BackgroundColor="Wheat">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+            <StackLayout>
+                <Frame BackgroundColor="Black" Padding="24" CornerRadius="0">
+                    <Label Text="Create Merchant" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"  FontAttributes="Bold" />
+                </Frame>
+            </StackLayout>
+            <StackLayout>
+                <Entry Placeholder="Username" x:Name="Username"  TextColor="Black"/>
+                <Entry Placeholder="Password" x:Name="Password" TextColor="Black"/>
+                <Entry Placeholder="Email" x:Name="Email" TextColor="Black"/>
+                <Entry Placeholder="Mobile" x:Name="Mobile"  TextColor="Black"/>
+                
+                    <Picker Title="Your zone"
+                        x:Name="pickerZone"
+                        ItemDisplayBinding="{Binding Name}"
+                        SelectedIndexChanged="pickerZone_SelectedIndexChanged">
+
+                    </Picker>
+                    <Picker Title="Your City"
+                    x:Name="pickerCity"
+                    ItemDisplayBinding="{Binding Name}"
+                    SelectedIndexChanged="pickerCity_SelectedIndexChanged">
+                    </Picker>
+                
+                    <Entry Placeholder="ShopName" x:Name="ShopName"  TextColor="Black"/>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Take Photo" x:Name="TakePhoto" Clicked="BtnTakePhoto_Clicked"/>
+                    <Image x:Name="img1" HeightRequest="50" WidthRequest="50" BackgroundColor="White" />
+
+                </StackLayout>
+
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                    <Button Text="Create" x:Name="Create" Clicked="Create_Clicked"  Background="gold" TextColor="Black" WidthRequest="150" Margin="5" />
+                <Button Text="Cancel" x:Name="Cancel" Background="gold" TextColor="Black" WidthRequest="150" Margin="5" />
+            </StackLayout>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

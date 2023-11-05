@@ -1,0 +1,80 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl" Version="1.9.141-beta" />
+    <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="AddNewProductPage.xaml.cs">
+      <DependentUpon>AddNewProductPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="DisplayOneProductInGalleryPage.xaml.cs">
+      <DependentUpon>DisplayOneProductInGalleryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="MainGoldenStorePage.xaml.cs">
+      <DependentUpon>MainGoldenStorePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="HelpPage.xaml.cs">
+      <DependentUpon>HelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="LoadMerchantPage.xaml.cs">
+      <DependentUpon>LoadMerchantPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="LoginMerchantPage.xaml.cs">
+      <DependentUpon>LoginMerchantPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="DisplayAllProductForUser.xaml.cs">
+      <DependentUpon>DisplayAllProductForUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="UpdateProductPage.xaml.cs">
+      <DependentUpon>UpdateProductPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="AddNewProductPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CreateMerchantPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="DisplayOneProductInGalleryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MainGoldenStorePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="LoadMerchantPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="LoginMerchantPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="HelpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="DisplayAllProductForUser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="UpdateMerchantPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Lang\" />
+  </ItemGroup>
+</Project>
